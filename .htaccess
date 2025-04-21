@@ -1,0 +1,12 @@
+# Enable URL Rewriting Engine
+RewriteEngine On
+
+# Skip Rewriting If The Request Is For An Existing Directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Skip Rewriting If The Request Is For An Existing File
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Redirect All Other Requests To index.html
+# This Allows Client-Side Routing To Handle The URLs
+RewriteRule ^([^/]+?/?)+$ ./index.html
